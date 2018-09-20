@@ -23,8 +23,16 @@
 			    </div>\
 			</div>'
 	     $('body').append(html);
-         $('body').on('click','.makesure',options.makeSure);
-          $('body').on('click','.makesure',options.cancen);
+         $('body').on('click','.makesure',function(){
+         	   $('.ui-dialog').removeClass('show')
+         		options.makeSure()
+
+         });
+          $('body').on('click','.makesure',function(){
+             	$('.ui-dialog').removeClass('show')
+          		options.cancen();
+
+          });
 }
 	function showPromise(msg,callback){
 			  var html='<div class="ui-dialog show">\
